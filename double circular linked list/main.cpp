@@ -19,11 +19,27 @@ void start() {
         linkList.clear();
     else if (c == 'm') {
         scanf("%c", &c);
-        if (c == 'p')
-            linkList.move_prior();
-        else if (c == 'n')
-            linkList.move_next();
-        else if (c == 'm' && scanf("%d", &i))
+        if (c == 'p') {
+            if (scanf("%d", &i)) {
+                if (i > 0)
+                    while (i--)
+                        linkList.move_prior();
+                else if (i < 0)
+                    while (i++)
+                        linkList.move_next();
+            } else
+                linkList.move_prior();
+        } else if (c == 'n') {
+            if (scanf("%d", &i)) {
+                if (i > 0)
+                    while (i--)
+                        linkList.move_next();
+                else if (i < 0)
+                    while (i++)
+                        linkList.move_prior();
+            } else
+                linkList.move_next();
+        } else if (c == 'm' && scanf("%d", &i))
             linkList.move(i);
     } else if (c == 'i')
         while (scanf("%c", &c) != EOF) {
