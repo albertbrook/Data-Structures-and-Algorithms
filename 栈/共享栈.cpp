@@ -2,16 +2,16 @@
 
 #define MaxSize 10
 
-class Stack {
+class SharedStack {
 private:
-    struct SharedStack {
+    struct ShStack {
         int data[MaxSize];
         int top1;
         int top2;
     } ShStack;
 
 public:
-    Stack() {
+    SharedStack() {
         ShStack.top1 = -1;
         ShStack.top2 = MaxSize;
     }
