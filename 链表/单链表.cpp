@@ -1,6 +1,6 @@
 #include <iostream>
 
-class LinkList {
+class SinglyLinkedList {
 private:
     struct Node {
         int data;
@@ -8,7 +8,7 @@ private:
     } *head, *tail, *p, *q;
 
 public:
-    LinkList() {
+    SinglyLinkedList() {
         head = tail = new Node{0, p = q = nullptr};
     }
 
@@ -67,6 +67,8 @@ public:
         while (i--)
             p = p->next;
         p->next = new Node{data, p->next};
+        if (tail == head)
+            tail = head->next;
         ++head->data;
     }
 
@@ -79,6 +81,8 @@ public:
             p = p->next;
         q = p->next;
         p->next = q->next;
+        if (q == tail)
+            tail = p;
         delete q;
         --head->data;
     }
