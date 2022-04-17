@@ -1,6 +1,6 @@
 #include <iostream>
 
-#define MaxSize 5
+#define MaxSize 50
 
 class SequenceList {
 private:
