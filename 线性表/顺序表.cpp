@@ -2,7 +2,7 @@
 
 #define MaxSize 50
 
-class SequenatialList {
+class SequentialList {
 private:
     struct SqList {
         int data[MaxSize];
@@ -10,7 +10,7 @@ private:
     } SqList;
 
 public:
-    SequenatialList() {
+    SequentialList() {
         SqList.length = 0;
     }
 

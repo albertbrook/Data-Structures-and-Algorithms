@@ -2,7 +2,7 @@
 
 #define MaxSize 50
 
-class SequenatialStack {
+class SequentialStack {
 private:
     struct SqStack {
         int data[MaxSize];
@@ -10,7 +10,7 @@ private:
     } SqStack;
 
 public:
-    SequenatialStack() {
+    SequentialStack() {
         SqStack.top = -1;
     }
 
