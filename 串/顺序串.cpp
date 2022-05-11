@@ -49,12 +49,13 @@ public:
     }
 
     int strCompare(SequentialString &s) {
-        for (int i = 0; i < SString.length; ++i)
+        int minLength = s.SString.length < SString.length ? s.SString.length : SString.length;
+        for (int i = 0; i < minLength; ++i)
             if (SString.ch[i] > s.SString.ch[i])
                 return 1;
             else if (SString.ch[i] < s.SString.ch[i])
                 return -1;
-        return 0;
+        return s.SString.length == SString.length ? 0 : (SString.length > s.SString.length ? 1 : -1);
     }
 
     int strLength() {
