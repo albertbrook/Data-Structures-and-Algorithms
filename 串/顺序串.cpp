@@ -21,12 +21,14 @@ public:
     }
 
     void strAssign(int index, char c) {
+        if (index < 0 || index > SString.length)
+            return;
         SString.ch[index] = c;
         ++SString.length;
     }
 
     void strInsert(int index, char c) {
-        if (SString.length == MaxSize)
+        if (SString.length == MaxSize || index < 0 || index > SString.length)
             return;
         for (int i = SString.length - 1; i >= index; --i)
             SString.ch[i + 1] = SString.ch[i];
@@ -35,7 +37,7 @@ public:
     }
 
     void strDelete(int index) {
-        if (SString.length == 0)
+        if (SString.length == 0 || index < 0 || index >= SString.length)
             return;
         for (int i = index; i < SString.length - 1; ++i)
             SString.ch[i] = SString.ch[i + 1];
