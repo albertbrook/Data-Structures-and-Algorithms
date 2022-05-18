@@ -11,7 +11,7 @@ private:
 
 public:
     SequentialString() {
-        SString.length = 0;
+        initArray();
     }
 
     void print() {
@@ -68,5 +68,13 @@ public:
         s.SString.length = end - start;
         for (int i = start; i < end; ++i)
             s.SString.ch[i - start] = SString.ch[i];
+    }
+    
+    void initArray() {
+        SString.length = 0;
+    }
+    
+    char getValue(int index) {
+        return SString.ch[index];
     }
 };
