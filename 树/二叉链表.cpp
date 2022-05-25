@@ -5,11 +5,11 @@ private:
     struct Node {
         int data;
         Node *lChild, *rChild;
-    } *root, *p;
+    } *root;
 
 public:
     BitTree() {
-        root = p = new Node{0, nullptr, nullptr};
+        root = new Node{0, nullptr, nullptr};
     }
 
     Node *getRoot() {
